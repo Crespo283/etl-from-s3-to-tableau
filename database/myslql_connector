@@ -1,5 +1,0 @@
-user = "admin"
-password = "06049084j"
-
-uri = 'mysql+pymysql://admin:06049084j@database-2.c9uodnq6xba6.eu-west-3.rds.amazonaws.com:3306/samuel'
-engine = create_engine(uri, echo=False)
