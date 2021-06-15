@@ -1,0 +1,46 @@
+[2021-06-07 07:40:54,250] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.spark_submit_job 2021-06-06T00:00:00+00:00 [None]>
+[2021-06-07 07:40:54,265] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.spark_submit_job 2021-06-06T00:00:00+00:00 [None]>
+[2021-06-07 07:40:54,266] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-07 07:40:54,267] {taskinstance.py:1043} INFO - Starting attempt 1 of 2
+[2021-06-07 07:40:54,268] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-07 07:40:54,291] {taskinstance.py:1063} INFO - Executing <Task(SparkSubmitOperator): spark_submit_job> on 2021-06-06T00:00:00+00:00
+[2021-06-07 07:40:54,296] {standard_task_runner.py:52} INFO - Started process 809 to run task
+[2021-06-07 07:40:54,301] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'forex_data_pipeline', 'spark_submit_job', '2021-06-06T00:00:00+00:00', '--job-id', '68', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag_spark.py', '--cfg-path', '/tmp/tmpcfeqgxpq', '--error-file', '/tmp/tmp7tvo8xsx']
+[2021-06-07 07:40:54,304] {standard_task_runner.py:77} INFO - Job 68: Subtask spark_submit_job
+[2021-06-07 07:40:54,356] {logging_mixin.py:104} INFO - Running <TaskInstance: forex_data_pipeline.spark_submit_job 2021-06-06T00:00:00+00:00 [running]> on host 72eec67484fb
+[2021-06-07 07:40:54,449] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=admin@localhost.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=forex_data_pipeline
+AIRFLOW_CTX_TASK_ID=spark_submit_job
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-06T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-06T00:00:00+00:00
+[2021-06-07 07:40:54,472] {base.py:74} INFO - Using connection to: id: spark_conn. Host: spark://spark-master, Port: 7077, Schema: , Login: marcelo, Password: XXXXXXXX, extra: None
+[2021-06-07 07:40:54,475] {spark_submit.py:364} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/workspace/test.py
+[2021-06-07 07:40:56,582] {spark_submit.py:526} INFO - WARNING: An illegal reflective access operation has occurred
+[2021-06-07 07:40:56,583] {spark_submit.py:526} INFO - WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/airflow/.local/lib/python3.7/site-packages/pyspark/jars/spark-unsafe_2.12-3.0.0.jar) to constructor java.nio.DirectByteBuffer(long,int)
+[2021-06-07 07:40:56,584] {spark_submit.py:526} INFO - WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+[2021-06-07 07:40:56,585] {spark_submit.py:526} INFO - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[2021-06-07 07:40:56,586] {spark_submit.py:526} INFO - WARNING: All illegal access operations will be denied in a future release
+[2021-06-07 07:40:57,165] {spark_submit.py:526} INFO - 21/06/07 07:40:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2021-06-07 07:40:57,528] {spark_submit.py:526} INFO - python: can't open file '/opt/workspace/test.py': [Errno 2] No such file or directory
+[2021-06-07 07:40:57,545] {spark_submit.py:526} INFO - log4j:WARN No appenders could be found for logger (org.apache.spark.util.ShutdownHookManager).
+[2021-06-07 07:40:57,548] {spark_submit.py:526} INFO - log4j:WARN Please initialize the log4j system properly.
+[2021-06-07 07:40:57,549] {spark_submit.py:526} INFO - log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+[2021-06-07 07:40:57,592] {taskinstance.py:1455} ERROR - Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/workspace/test.py. Error code is: 2.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 183, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 455, in submit
+    self._mask_cmd(spark_submit_cmd), returncode
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/workspace/test.py. Error code is: 2.
+[2021-06-07 07:40:57,611] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=forex_data_pipeline, task_id=spark_submit_job, execution_date=20210606T000000, start_date=20210607T074054, end_date=20210607T074057
+[2021-06-07 07:40:57,668] {local_task_job.py:146} INFO - Task exited with return code 1

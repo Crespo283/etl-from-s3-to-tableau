@@ -1,0 +1,31 @@
+[2021-06-07 07:32:18,693] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.test2 2021-06-06T00:00:00+00:00 [queued]>
+[2021-06-07 07:32:18,713] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.test2 2021-06-06T00:00:00+00:00 [queued]>
+[2021-06-07 07:32:18,714] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-07 07:32:18,715] {taskinstance.py:1043} INFO - Starting attempt 1 of 2
+[2021-06-07 07:32:18,717] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-07 07:32:18,741] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): test2> on 2021-06-06T00:00:00+00:00
+[2021-06-07 07:32:18,747] {standard_task_runner.py:52} INFO - Started process 52 to run task
+[2021-06-07 07:32:18,769] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'forex_data_pipeline', 'test2', '2021-06-06T00:00:00+00:00', '--job-id', '67', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag_spark.py', '--cfg-path', '/tmp/tmpqxqlwitr', '--error-file', '/tmp/tmpl9t_tcz3']
+[2021-06-07 07:32:18,771] {standard_task_runner.py:77} INFO - Job 67: Subtask test2
+[2021-06-07 07:32:18,876] {logging_mixin.py:104} INFO - Running <TaskInstance: forex_data_pipeline.test2 2021-06-06T00:00:00+00:00 [running]> on host 72eec67484fb
+[2021-06-07 07:32:18,966] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=admin@localhost.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=forex_data_pipeline
+AIRFLOW_CTX_TASK_ID=test2
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-06T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-06T00:00:00+00:00
+[2021-06-07 07:32:38,358] {logging_mixin.py:104} INFO - +---+-----+
+| id|label|
++---+-----+
+|  1|  foo|
+|  2|  bar|
++---+-----+
+[2021-06-07 07:32:38,361] {logging_mixin.py:104} INFO - 
+[2021-06-07 07:32:38,362] {logging_mixin.py:104} INFO - None
+[2021-06-07 07:32:38,363] {python.py:118} INFO - Done. Returned value was: None
+[2021-06-07 07:32:38,384] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=forex_data_pipeline, task_id=test2, execution_date=20210606T000000, start_date=20210607T073218, end_date=20210607T073238
+[2021-06-07 07:32:38,424] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-06-07 07:32:38,456] {local_task_job.py:146} INFO - Task exited with return code 0

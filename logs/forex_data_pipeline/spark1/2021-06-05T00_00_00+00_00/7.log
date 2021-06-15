@@ -1,0 +1,210 @@
+[2021-06-06 14:10:01,857] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.spark1 2021-06-05T00:00:00+00:00 [queued]>
+[2021-06-06 14:10:01,924] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.spark1 2021-06-05T00:00:00+00:00 [queued]>
+[2021-06-06 14:10:01,926] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-06 14:10:01,927] {taskinstance.py:1043} INFO - Starting attempt 7 of 7
+[2021-06-06 14:10:01,929] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-06 14:10:01,950] {taskinstance.py:1063} INFO - Executing <Task(SparkSubmitOperator): spark1> on 2021-06-05T00:00:00+00:00
+[2021-06-06 14:10:01,969] {standard_task_runner.py:52} INFO - Started process 759 to run task
+[2021-06-06 14:10:01,981] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'forex_data_pipeline', 'spark1', '2021-06-05T00:00:00+00:00', '--job-id', '20', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag_spark.py', '--cfg-path', '/tmp/tmp5_i331uz', '--error-file', '/tmp/tmp7wuczdqc']
+[2021-06-06 14:10:01,988] {standard_task_runner.py:77} INFO - Job 20: Subtask spark1
+[2021-06-06 14:10:02,138] {logging_mixin.py:104} INFO - Running <TaskInstance: forex_data_pipeline.spark1 2021-06-05T00:00:00+00:00 [running]> on host 5b1a5e9e3fee
+[2021-06-06 14:10:02,257] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=admin@localhost.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=forex_data_pipeline
+AIRFLOW_CTX_TASK_ID=spark1
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-05T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-05T00:00:00+00:00
+[2021-06-06 14:10:02,286] {base.py:74} INFO - Using connection to: id: spark_conn. Host: spark://spark-master, Port: 7077, Schema: , Login: marcelo, Password: XXXXXXXX, extra: None
+[2021-06-06 14:10:02,291] {spark_submit.py:364} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/airflow/dags/test.py
+[2021-06-06 14:10:09,446] {spark_submit.py:526} INFO - WARNING: An illegal reflective access operation has occurred
+[2021-06-06 14:10:09,452] {spark_submit.py:526} INFO - WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/airflow/.local/lib/python3.7/site-packages/pyspark/jars/spark-unsafe_2.12-3.1.2.jar) to constructor java.nio.DirectByteBuffer(long,int)
+[2021-06-06 14:10:09,454] {spark_submit.py:526} INFO - WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+[2021-06-06 14:10:09,460] {spark_submit.py:526} INFO - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[2021-06-06 14:10:09,462] {spark_submit.py:526} INFO - WARNING: All illegal access operations will be denied in a future release
+[2021-06-06 14:10:13,643] {spark_submit.py:526} INFO - 21/06/06 14:10:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2021-06-06 14:10:17,794] {spark_submit.py:526} INFO - Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[2021-06-06 14:10:17,841] {spark_submit.py:526} INFO - 21/06/06 14:10:17 INFO SparkContext: Running Spark version 3.1.2
+[2021-06-06 14:10:18,032] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO ResourceUtils: ==============================================================
+[2021-06-06 14:10:18,034] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2021-06-06 14:10:18,041] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO ResourceUtils: ==============================================================
+[2021-06-06 14:10:18,046] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO SparkContext: Submitted application: pyspark-run1
+[2021-06-06 14:10:18,215] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 512, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2021-06-06 14:10:18,275] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO ResourceProfile: Limiting resource is cpu
+[2021-06-06 14:10:18,276] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2021-06-06 14:10:18,427] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO SecurityManager: Changing view acls to: airflow
+[2021-06-06 14:10:18,430] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO SecurityManager: Changing modify acls to: airflow
+[2021-06-06 14:10:18,432] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO SecurityManager: Changing view acls groups to:
+[2021-06-06 14:10:18,434] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO SecurityManager: Changing modify acls groups to:
+[2021-06-06 14:10:18,436] {spark_submit.py:526} INFO - 21/06/06 14:10:18 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(airflow); groups with view permissions: Set(); users  with modify permissions: Set(airflow); groups with modify permissions: Set()
+[2021-06-06 14:10:19,505] {spark_submit.py:526} INFO - 21/06/06 14:10:19 INFO Utils: Successfully started service 'sparkDriver' on port 40567.
+[2021-06-06 14:10:19,665] {spark_submit.py:526} INFO - 21/06/06 14:10:19 INFO SparkEnv: Registering MapOutputTracker
+[2021-06-06 14:10:19,906] {spark_submit.py:526} INFO - 21/06/06 14:10:19 INFO SparkEnv: Registering BlockManagerMaster
+[2021-06-06 14:10:19,989] {spark_submit.py:526} INFO - 21/06/06 14:10:19 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2021-06-06 14:10:19,991] {spark_submit.py:526} INFO - 21/06/06 14:10:19 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2021-06-06 14:10:20,022] {spark_submit.py:526} INFO - 21/06/06 14:10:20 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2021-06-06 14:10:20,110] {spark_submit.py:526} INFO - 21/06/06 14:10:20 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-be3b0167-3d33-424c-88fa-f9a48b7d3a70
+[2021-06-06 14:10:20,240] {spark_submit.py:526} INFO - 21/06/06 14:10:20 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2021-06-06 14:10:20,309] {spark_submit.py:526} INFO - 21/06/06 14:10:20 INFO SparkEnv: Registering OutputCommitCoordinator
+[2021-06-06 14:10:21,078] {spark_submit.py:526} INFO - 21/06/06 14:10:21 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2021-06-06 14:10:21,786] {spark_submit.py:526} INFO - 21/06/06 14:10:21 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://5b1a5e9e3fee:4040
+[2021-06-06 14:10:23,820] {spark_submit.py:526} INFO - 21/06/06 14:10:23 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2021-06-06 14:10:24,309] {spark_submit.py:526} INFO - 21/06/06 14:10:24 INFO TransportClientFactory: Successfully created connection to spark-master/172.21.0.4:7077 after 318 ms (0 ms spent in bootstraps)
+[2021-06-06 14:10:25,124] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20210606141024-0001
+[2021-06-06 14:10:25,152] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20210606141024-0001/0 on worker-20210606134554-172.21.0.7-36731 (172.21.0.7:36731) with 1 core(s)
+[2021-06-06 14:10:25,183] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO StandaloneSchedulerBackend: Granted executor ID app-20210606141024-0001/0 on hostPort 172.21.0.7:36731 with 1 core(s), 512.0 MiB RAM
+[2021-06-06 14:10:25,186] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20210606141024-0001/1 on worker-20210606134553-172.21.0.6-46863 (172.21.0.6:46863) with 1 core(s)
+[2021-06-06 14:10:25,196] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO StandaloneSchedulerBackend: Granted executor ID app-20210606141024-0001/1 on hostPort 172.21.0.6:46863 with 1 core(s), 512.0 MiB RAM
+[2021-06-06 14:10:25,254] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33955.
+[2021-06-06 14:10:25,258] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO NettyBlockTransferService: Server created on 5b1a5e9e3fee:33955
+[2021-06-06 14:10:25,294] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2021-06-06 14:10:25,356] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 5b1a5e9e3fee, 33955, None)
+[2021-06-06 14:10:25,383] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO BlockManagerMasterEndpoint: Registering block manager 5b1a5e9e3fee:33955 with 434.4 MiB RAM, BlockManagerId(driver, 5b1a5e9e3fee, 33955, None)
+[2021-06-06 14:10:25,435] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 5b1a5e9e3fee, 33955, None)
+[2021-06-06 14:10:25,453] {spark_submit.py:526} INFO - 21/06/06 14:10:25 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 5b1a5e9e3fee, 33955, None)
+[2021-06-06 14:10:25,841] {spark_submit.py:526} INFO - 21/06/06 14:10:25 ERROR TransportRequestHandler: Error while invoking RpcHandler#receive() for one-way message.
+[2021-06-06 14:10:25,843] {spark_submit.py:526} INFO - java.io.InvalidClassException: org.apache.spark.deploy.DeployMessages$ExecutorUpdated; local class incompatible: stream classdesc serialVersionUID = 1654279024112373855, local class serialVersionUID = -1971851081955655249
+[2021-06-06 14:10:25,847] {spark_submit.py:526} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:689)
+[2021-06-06 14:10:25,848] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2012)
+[2021-06-06 14:10:25,849] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1862)
+[2021-06-06 14:10:25,852] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2169)
+[2021-06-06 14:10:25,859] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1679)
+[2021-06-06 14:10:25,861] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:493)
+[2021-06-06 14:10:25,868] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:451)
+[2021-06-06 14:10:25,872] {spark_submit.py:526} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:76)
+[2021-06-06 14:10:25,877] {spark_submit.py:526} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:109)
+[2021-06-06 14:10:25,880] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:299)
+[2021-06-06 14:10:25,881] {spark_submit.py:526} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+[2021-06-06 14:10:25,884] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:352)
+[2021-06-06 14:10:25,888] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:298)
+[2021-06-06 14:10:25,890] {spark_submit.py:526} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+[2021-06-06 14:10:25,894] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:298)
+[2021-06-06 14:10:25,896] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:647)
+[2021-06-06 14:10:25,897] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:698)
+[2021-06-06 14:10:25,898] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:690)
+[2021-06-06 14:10:25,908] {spark_submit.py:526} INFO - at org.apache.spark.network.server.TransportRequestHandler.processOneWayMessage(TransportRequestHandler.java:255)
+[2021-06-06 14:10:25,909] {spark_submit.py:526} INFO - at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:111)
+[2021-06-06 14:10:25,911] {spark_submit.py:526} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:140)
+[2021-06-06 14:10:25,912] {spark_submit.py:526} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+[2021-06-06 14:10:25,913] {spark_submit.py:526} INFO - at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+[2021-06-06 14:10:25,918] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:25,919] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:25,921] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+[2021-06-06 14:10:25,922] {spark_submit.py:526} INFO - at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+[2021-06-06 14:10:25,923] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:25,926] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:25,927] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+[2021-06-06 14:10:25,929] {spark_submit.py:526} INFO - at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+[2021-06-06 14:10:25,930] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:25,931] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:25,934] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+[2021-06-06 14:10:25,936] {spark_submit.py:526} INFO - at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+[2021-06-06 14:10:25,937] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:25,942] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:25,944] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+[2021-06-06 14:10:25,947] {spark_submit.py:526} INFO - at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+[2021-06-06 14:10:25,948] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:25,950] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:25,952] {spark_submit.py:526} INFO - at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+[2021-06-06 14:10:25,957] {spark_submit.py:526} INFO - at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+[2021-06-06 14:10:25,958] {spark_submit.py:526} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+[2021-06-06 14:10:25,960] {spark_submit.py:526} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+[2021-06-06 14:10:25,964] {spark_submit.py:526} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+[2021-06-06 14:10:25,965] {spark_submit.py:526} INFO - at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+[2021-06-06 14:10:25,966] {spark_submit.py:526} INFO - at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+[2021-06-06 14:10:25,967] {spark_submit.py:526} INFO - at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2021-06-06 14:10:25,969] {spark_submit.py:526} INFO - at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2021-06-06 14:10:25,972] {spark_submit.py:526} INFO - at java.base/java.lang.Thread.run(Thread.java:829)
+[2021-06-06 14:10:25,976] {spark_submit.py:526} INFO - 21/06/06 14:10:25 ERROR TransportRequestHandler: Error while invoking RpcHandler#receive() for one-way message.
+[2021-06-06 14:10:25,977] {spark_submit.py:526} INFO - java.io.InvalidClassException: org.apache.spark.deploy.DeployMessages$ExecutorUpdated; local class incompatible: stream classdesc serialVersionUID = 1654279024112373855, local class serialVersionUID = -1971851081955655249
+[2021-06-06 14:10:25,979] {spark_submit.py:526} INFO - at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:689)
+[2021-06-06 14:10:25,980] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2012)
+[2021-06-06 14:10:25,982] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1862)
+[2021-06-06 14:10:25,983] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2169)
+[2021-06-06 14:10:25,986] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1679)
+[2021-06-06 14:10:25,987] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:493)
+[2021-06-06 14:10:25,989] {spark_submit.py:526} INFO - at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:451)
+[2021-06-06 14:10:25,993] {spark_submit.py:526} INFO - at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:76)
+[2021-06-06 14:10:25,997] {spark_submit.py:526} INFO - at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:109)
+[2021-06-06 14:10:25,998] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:299)
+[2021-06-06 14:10:26,000] {spark_submit.py:526} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+[2021-06-06 14:10:26,003] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:352)
+[2021-06-06 14:10:26,004] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:298)
+[2021-06-06 14:10:26,005] {spark_submit.py:526} INFO - at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+[2021-06-06 14:10:26,006] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:298)
+[2021-06-06 14:10:26,007] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:647)
+[2021-06-06 14:10:26,009] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:698)
+[2021-06-06 14:10:26,013] {spark_submit.py:526} INFO - at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:690)
+[2021-06-06 14:10:26,014] {spark_submit.py:526} INFO - at org.apache.spark.network.server.TransportRequestHandler.processOneWayMessage(TransportRequestHandler.java:255)
+[2021-06-06 14:10:26,015] {spark_submit.py:526} INFO - at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:111)
+[2021-06-06 14:10:26,017] {spark_submit.py:526} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:140)
+[2021-06-06 14:10:26,018] {spark_submit.py:526} INFO - at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+[2021-06-06 14:10:26,019] {spark_submit.py:526} INFO - at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+[2021-06-06 14:10:26,020] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:26,021] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:26,022] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+[2021-06-06 14:10:26,024] {spark_submit.py:526} INFO - at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+[2021-06-06 14:10:26,025] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:26,029] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:26,030] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+[2021-06-06 14:10:26,032] {spark_submit.py:526} INFO - at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+[2021-06-06 14:10:26,037] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:26,038] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:26,040] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+[2021-06-06 14:10:26,043] {spark_submit.py:526} INFO - at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+[2021-06-06 14:10:26,044] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:26,047] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:26,049] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+[2021-06-06 14:10:26,051] {spark_submit.py:526} INFO - at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+[2021-06-06 14:10:26,053] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+[2021-06-06 14:10:26,055] {spark_submit.py:526} INFO - at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+[2021-06-06 14:10:26,057] {spark_submit.py:526} INFO - at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+[2021-06-06 14:10:26,059] {spark_submit.py:526} INFO - at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+[2021-06-06 14:10:26,061] {spark_submit.py:526} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+[2021-06-06 14:10:26,063] {spark_submit.py:526} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+[2021-06-06 14:10:26,064] {spark_submit.py:526} INFO - at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+[2021-06-06 14:10:26,065] {spark_submit.py:526} INFO - at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+[2021-06-06 14:10:26,066] {spark_submit.py:526} INFO - at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+[2021-06-06 14:10:26,068] {spark_submit.py:526} INFO - at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+[2021-06-06 14:10:26,072] {spark_submit.py:526} INFO - at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+[2021-06-06 14:10:26,073] {spark_submit.py:526} INFO - at java.base/java.lang.Thread.run(Thread.java:829)
+[2021-06-06 14:10:27,706] {spark_submit.py:526} INFO - 21/06/06 14:10:27 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2021-06-06 14:10:29,937] {spark_submit.py:526} INFO - 21/06/06 14:10:29 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/opt/airflow/spark-warehouse').
+[2021-06-06 14:10:29,943] {spark_submit.py:526} INFO - 21/06/06 14:10:29 INFO SharedState: Warehouse path is 'file:/opt/airflow/spark-warehouse'.
+[2021-06-06 14:10:38,502] {spark_submit.py:526} INFO - Traceback (most recent call last):
+[2021-06-06 14:10:38,511] {spark_submit.py:526} INFO - File "/opt/airflow/dags/test.py", line 10, in <module>
+[2021-06-06 14:10:38,539] {spark_submit.py:526} INFO - data = spark.read.csv(path="data/uk-macroeconomic-data.csv", sep=",", header=True)
+[2021-06-06 14:10:38,541] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 737, in csv
+[2021-06-06 14:10:38,547] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1305, in __call__
+[2021-06-06 14:10:38,559] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+[2021-06-06 14:10:38,753] {spark_submit.py:526} INFO - pyspark.sql.utils.AnalysisException: Path does not exist: file:/opt/airflow/data/uk-macroeconomic-data.csv
+[2021-06-06 14:10:39,748] {spark_submit.py:526} INFO - 21/06/06 14:10:39 INFO SparkUI: Stopped Spark web UI at http://5b1a5e9e3fee:4040
+[2021-06-06 14:10:39,777] {spark_submit.py:526} INFO - 21/06/06 14:10:39 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2021-06-06 14:10:39,797] {spark_submit.py:526} INFO - 21/06/06 14:10:39 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asking each executor to shut down
+[2021-06-06 14:10:40,238] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2021-06-06 14:10:40,420] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO MemoryStore: MemoryStore cleared
+[2021-06-06 14:10:40,429] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO BlockManager: BlockManager stopped
+[2021-06-06 14:10:40,482] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2021-06-06 14:10:40,497] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2021-06-06 14:10:40,564] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO SparkContext: Successfully stopped SparkContext
+[2021-06-06 14:10:40,594] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO ShutdownHookManager: Shutdown hook called
+[2021-06-06 14:10:40,598] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-468d3457-084b-4fd2-b77d-e14c4126c2f3/pyspark-6c5e6a06-00b7-4dc3-82af-a6d1450299c6
+[2021-06-06 14:10:40,625] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-468d3457-084b-4fd2-b77d-e14c4126c2f3
+[2021-06-06 14:10:40,644] {spark_submit.py:526} INFO - 21/06/06 14:10:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-ac93464f-d8e4-4298-9413-b7e46c6ddcec
+[2021-06-06 14:10:40,883] {taskinstance.py:1455} ERROR - Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/airflow/dags/test.py. Error code is: 1.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 183, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 455, in submit
+    self._mask_cmd(spark_submit_cmd), returncode
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/airflow/dags/test.py. Error code is: 1.
+[2021-06-06 14:10:40,893] {taskinstance.py:1503} INFO - Marking task as FAILED. dag_id=forex_data_pipeline, task_id=spark1, execution_date=20210605T000000, start_date=20210606T141001, end_date=20210606T141040
+[2021-06-06 14:10:41,100] {local_task_job.py:146} INFO - Task exited with return code 1

@@ -1,0 +1,121 @@
+[2021-06-06 22:06:04,330] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.test2 2021-06-05T00:00:00+00:00 [queued]>
+[2021-06-06 22:06:04,386] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.test2 2021-06-05T00:00:00+00:00 [queued]>
+[2021-06-06 22:06:04,390] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-06 22:06:04,401] {taskinstance.py:1043} INFO - Starting attempt 2 of 3
+[2021-06-06 22:06:04,405] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-06 22:06:04,475] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): test2> on 2021-06-05T00:00:00+00:00
+[2021-06-06 22:06:04,508] {standard_task_runner.py:52} INFO - Started process 3445 to run task
+[2021-06-06 22:06:04,520] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'forex_data_pipeline', 'test2', '2021-06-05T00:00:00+00:00', '--job-id', '60', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag_spark.py', '--cfg-path', '/tmp/tmpxlrbono_', '--error-file', '/tmp/tmpryivx8xl']
+[2021-06-06 22:06:04,527] {standard_task_runner.py:77} INFO - Job 60: Subtask test2
+[2021-06-06 22:06:04,838] {logging_mixin.py:104} INFO - Running <TaskInstance: forex_data_pipeline.test2 2021-06-05T00:00:00+00:00 [running]> on host 72eec67484fb
+[2021-06-06 22:06:05,429] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=admin@localhost.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=forex_data_pipeline
+AIRFLOW_CTX_TASK_ID=test2
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-05T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-05T00:00:00+00:00
+[2021-06-06 22:06:47,708] {logging_mixin.py:104} WARNING - Traceback (most recent call last):
+[2021-06-06 22:06:47,789] {logging_mixin.py:104} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/serializers.py", line 437, in dumps
+    return cloudpickle.dumps(obj, pickle_protocol)
+[2021-06-06 22:06:47,898] {logging_mixin.py:104} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/cloudpickle/cloudpickle_fast.py", line 101, in dumps
+    cp.dump(obj)
+[2021-06-06 22:06:47,910] {logging_mixin.py:104} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/cloudpickle/cloudpickle_fast.py", line 540, in dump
+    return Pickler.dump(self, obj)
+[2021-06-06 22:06:47,960] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 437, in dump
+    self.save(obj)
+[2021-06-06 22:06:47,962] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+[2021-06-06 22:06:47,965] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 789, in save_tuple
+    save(element)
+[2021-06-06 22:06:47,989] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+[2021-06-06 22:06:48,004] {logging_mixin.py:104} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/cloudpickle/cloudpickle_fast.py", line 722, in save_function
+    *self._dynamic_function_reduce(obj), obj=obj
+[2021-06-06 22:06:48,006] {logging_mixin.py:104} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/cloudpickle/cloudpickle_fast.py", line 659, in _save_reduce_pickle5
+    dictitems=dictitems, obj=obj
+[2021-06-06 22:06:48,009] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 638, in save_reduce
+    save(args)
+[2021-06-06 22:06:48,015] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+[2021-06-06 22:06:48,016] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 789, in save_tuple
+    save(element)
+[2021-06-06 22:06:48,019] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+[2021-06-06 22:06:48,022] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 774, in save_tuple
+    save(element)
+[2021-06-06 22:06:48,037] {logging_mixin.py:104} WARNING -   File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+[2021-06-06 22:06:48,050] {logging_mixin.py:104} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/dill/_dill.py", line 1177, in save_cell
+    f = obj.cell_contents
+[2021-06-06 22:06:48,063] {logging_mixin.py:104} WARNING - ValueError: Cell is empty
+[2021-06-06 22:06:48,072] {taskinstance.py:1455} ERROR - Could not serialize object: ValueError: Cell is empty
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/serializers.py", line 437, in dumps
+    return cloudpickle.dumps(obj, pickle_protocol)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/cloudpickle/cloudpickle_fast.py", line 101, in dumps
+    cp.dump(obj)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/cloudpickle/cloudpickle_fast.py", line 540, in dump
+    return Pickler.dump(self, obj)
+  File "/usr/local/lib/python3.7/pickle.py", line 437, in dump
+    self.save(obj)
+  File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+  File "/usr/local/lib/python3.7/pickle.py", line 789, in save_tuple
+    save(element)
+  File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/cloudpickle/cloudpickle_fast.py", line 722, in save_function
+    *self._dynamic_function_reduce(obj), obj=obj
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/cloudpickle/cloudpickle_fast.py", line 659, in _save_reduce_pickle5
+    dictitems=dictitems, obj=obj
+  File "/usr/local/lib/python3.7/pickle.py", line 638, in save_reduce
+    save(args)
+  File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+  File "/usr/local/lib/python3.7/pickle.py", line 789, in save_tuple
+    save(element)
+  File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+  File "/usr/local/lib/python3.7/pickle.py", line 774, in save_tuple
+    save(element)
+  File "/usr/local/lib/python3.7/pickle.py", line 504, in save
+    f(self, obj) # Call unbound method with explicit self
+  File "/home/airflow/.local/lib/python3.7/site-packages/dill/_dill.py", line 1177, in save_cell
+    f = obj.cell_contents
+ValueError: Cell is empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 117, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/spark_test.py", line 19, in test_spark
+    ["id", "label"],  # add your column names here
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/session.py", line 675, in createDataFrame
+    return self._create_dataframe(data, schema, samplingRatio, verifySchema)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/session.py", line 701, in _create_dataframe
+    jrdd = self._jvm.SerDeUtil.toJavaArray(rdd._to_java_object_rdd())
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/rdd.py", line 2618, in _to_java_object_rdd
+    return self.ctx._jvm.SerDeUtil.pythonToJava(rdd._jrdd, True)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/rdd.py", line 2950, in _jrdd
+    self._jrdd_deserializer, profiler)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/rdd.py", line 2828, in _wrap_function
+    pickled_command, broadcast_vars, env, includes = _prepare_for_python_RDD(sc, command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/rdd.py", line 2814, in _prepare_for_python_RDD
+    pickled_command = ser.dumps(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/serializers.py", line 447, in dumps
+    raise pickle.PicklingError(msg)
+_pickle.PicklingError: Could not serialize object: ValueError: Cell is empty
+[2021-06-06 22:06:48,089] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=forex_data_pipeline, task_id=test2, execution_date=20210605T000000, start_date=20210606T220604, end_date=20210606T220648
+[2021-06-06 22:06:48,364] {local_task_job.py:146} INFO - Task exited with return code 1

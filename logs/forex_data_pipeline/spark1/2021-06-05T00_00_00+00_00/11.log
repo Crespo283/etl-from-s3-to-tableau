@@ -1,0 +1,112 @@
+[2021-06-06 14:33:48,936] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.spark1 2021-06-05T00:00:00+00:00 [queued]>
+[2021-06-06 14:33:48,979] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.spark1 2021-06-05T00:00:00+00:00 [queued]>
+[2021-06-06 14:33:48,980] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-06 14:33:48,986] {taskinstance.py:1043} INFO - Starting attempt 11 of 12
+[2021-06-06 14:33:48,990] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-06 14:33:49,032] {taskinstance.py:1063} INFO - Executing <Task(SparkSubmitOperator): spark1> on 2021-06-05T00:00:00+00:00
+[2021-06-06 14:33:49,052] {standard_task_runner.py:52} INFO - Started process 150 to run task
+[2021-06-06 14:33:49,070] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'forex_data_pipeline', 'spark1', '2021-06-05T00:00:00+00:00', '--job-id', '26', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag_spark.py', '--cfg-path', '/tmp/tmpsrqacjft', '--error-file', '/tmp/tmpeewgxyg5']
+[2021-06-06 14:33:49,074] {standard_task_runner.py:77} INFO - Job 26: Subtask spark1
+[2021-06-06 14:33:49,275] {logging_mixin.py:104} INFO - Running <TaskInstance: forex_data_pipeline.spark1 2021-06-05T00:00:00+00:00 [running]> on host 5b1a5e9e3fee
+[2021-06-06 14:33:49,420] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=admin@localhost.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=forex_data_pipeline
+AIRFLOW_CTX_TASK_ID=spark1
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-05T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-05T00:00:00+00:00
+[2021-06-06 14:33:49,446] {base.py:74} INFO - Using connection to: id: spark_conn. Host: spark://spark-master, Port: 7077, Schema: , Login: marcelo, Password: XXXXXXXX, extra: None
+[2021-06-06 14:33:49,450] {spark_submit.py:364} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/airflow/dags/test.py
+[2021-06-06 14:33:55,729] {spark_submit.py:526} INFO - WARNING: An illegal reflective access operation has occurred
+[2021-06-06 14:33:55,735] {spark_submit.py:526} INFO - WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/airflow/.local/lib/python3.7/site-packages/pyspark/jars/spark-unsafe_2.12-3.1.2.jar) to constructor java.nio.DirectByteBuffer(long,int)
+[2021-06-06 14:33:55,738] {spark_submit.py:526} INFO - WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+[2021-06-06 14:33:55,746] {spark_submit.py:526} INFO - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[2021-06-06 14:33:55,757] {spark_submit.py:526} INFO - WARNING: All illegal access operations will be denied in a future release
+[2021-06-06 14:33:57,888] {spark_submit.py:526} INFO - 21/06/06 14:33:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2021-06-06 14:34:00,387] {spark_submit.py:526} INFO - Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[2021-06-06 14:34:00,416] {spark_submit.py:526} INFO - 21/06/06 14:34:00 INFO SparkContext: Running Spark version 3.1.2
+[2021-06-06 14:34:00,638] {spark_submit.py:526} INFO - 21/06/06 14:34:00 INFO ResourceUtils: ==============================================================
+[2021-06-06 14:34:00,645] {spark_submit.py:526} INFO - 21/06/06 14:34:00 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2021-06-06 14:34:00,652] {spark_submit.py:526} INFO - 21/06/06 14:34:00 INFO ResourceUtils: ==============================================================
+[2021-06-06 14:34:00,662] {spark_submit.py:526} INFO - 21/06/06 14:34:00 INFO SparkContext: Submitted application: pyspark-run2
+[2021-06-06 14:34:00,823] {spark_submit.py:526} INFO - 21/06/06 14:34:00 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 100, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2021-06-06 14:34:00,924] {spark_submit.py:526} INFO - 21/06/06 14:34:00 INFO ResourceProfile: Limiting resource is cpu
+[2021-06-06 14:34:00,928] {spark_submit.py:526} INFO - 21/06/06 14:34:00 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2021-06-06 14:34:01,107] {spark_submit.py:526} INFO - 21/06/06 14:34:01 INFO SecurityManager: Changing view acls to: airflow
+[2021-06-06 14:34:01,109] {spark_submit.py:526} INFO - 21/06/06 14:34:01 INFO SecurityManager: Changing modify acls to: airflow
+[2021-06-06 14:34:01,111] {spark_submit.py:526} INFO - 21/06/06 14:34:01 INFO SecurityManager: Changing view acls groups to:
+[2021-06-06 14:34:01,114] {spark_submit.py:526} INFO - 21/06/06 14:34:01 INFO SecurityManager: Changing modify acls groups to:
+[2021-06-06 14:34:01,116] {spark_submit.py:526} INFO - 21/06/06 14:34:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(airflow); groups with view permissions: Set(); users  with modify permissions: Set(airflow); groups with modify permissions: Set()
+[2021-06-06 14:34:03,125] {spark_submit.py:526} INFO - 21/06/06 14:34:03 INFO Utils: Successfully started service 'sparkDriver' on port 36931.
+[2021-06-06 14:34:03,260] {spark_submit.py:526} INFO - 21/06/06 14:34:03 INFO SparkEnv: Registering MapOutputTracker
+[2021-06-06 14:34:03,387] {spark_submit.py:526} INFO - 21/06/06 14:34:03 ERROR SparkContext: Error initializing SparkContext.
+[2021-06-06 14:34:03,399] {spark_submit.py:526} INFO - java.lang.IllegalArgumentException: Executor memory 104857600 must be at least 471859200. Please increase executor memory using the --executor-memory option or spark.executor.memory in Spark configuration.
+[2021-06-06 14:34:03,406] {spark_submit.py:526} INFO - at org.apache.spark.memory.UnifiedMemoryManager$.getMaxMemory(UnifiedMemoryManager.scala:229)
+[2021-06-06 14:34:03,411] {spark_submit.py:526} INFO - at org.apache.spark.memory.UnifiedMemoryManager$.apply(UnifiedMemoryManager.scala:201)
+[2021-06-06 14:34:03,416] {spark_submit.py:526} INFO - at org.apache.spark.SparkEnv$.create(SparkEnv.scala:340)
+[2021-06-06 14:34:03,421] {spark_submit.py:526} INFO - at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:189)
+[2021-06-06 14:34:03,424] {spark_submit.py:526} INFO - at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:277)
+[2021-06-06 14:34:03,452] {spark_submit.py:526} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:458)
+[2021-06-06 14:34:03,474] {spark_submit.py:526} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2021-06-06 14:34:03,477] {spark_submit.py:526} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2021-06-06 14:34:03,481] {spark_submit.py:526} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+[2021-06-06 14:34:03,485] {spark_submit.py:526} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2021-06-06 14:34:03,489] {spark_submit.py:526} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+[2021-06-06 14:34:03,506] {spark_submit.py:526} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2021-06-06 14:34:03,511] {spark_submit.py:526} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2021-06-06 14:34:03,533] {spark_submit.py:526} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2021-06-06 14:34:03,541] {spark_submit.py:526} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2021-06-06 14:34:03,551] {spark_submit.py:526} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2021-06-06 14:34:03,556] {spark_submit.py:526} INFO - at py4j.GatewayConnection.run(GatewayConnection.java:238)
+[2021-06-06 14:34:03,568] {spark_submit.py:526} INFO - at java.base/java.lang.Thread.run(Thread.java:829)
+[2021-06-06 14:34:03,571] {spark_submit.py:526} INFO - 21/06/06 14:34:03 INFO SparkContext: Successfully stopped SparkContext
+[2021-06-06 14:34:03,582] {spark_submit.py:526} INFO - Traceback (most recent call last):
+[2021-06-06 14:34:03,588] {spark_submit.py:526} INFO - File "/opt/airflow/dags/test.py", line 6, in <module>
+[2021-06-06 14:34:03,592] {spark_submit.py:526} INFO - .config("spark.executor.memory", "100m")
+[2021-06-06 14:34:03,596] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/session.py", line 228, in getOrCreate
+[2021-06-06 14:34:03,602] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py", line 384, in getOrCreate
+[2021-06-06 14:34:03,607] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py", line 147, in __init__
+[2021-06-06 14:34:03,611] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py", line 209, in _do_init
+[2021-06-06 14:34:03,617] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py", line 321, in _initialize_context
+[2021-06-06 14:34:03,630] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1569, in __call__
+[2021-06-06 14:34:03,642] {spark_submit.py:526} INFO - File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/python/lib/py4j-0.10.9-src.zip/py4j/protocol.py", line 328, in get_return_value
+[2021-06-06 14:34:03,696] {spark_submit.py:526} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+[2021-06-06 14:34:03,706] {spark_submit.py:526} INFO - : java.lang.IllegalArgumentException: Executor memory 104857600 must be at least 471859200. Please increase executor memory using the --executor-memory option or spark.executor.memory in Spark configuration.
+[2021-06-06 14:34:03,715] {spark_submit.py:526} INFO - at org.apache.spark.memory.UnifiedMemoryManager$.getMaxMemory(UnifiedMemoryManager.scala:229)
+[2021-06-06 14:34:03,718] {spark_submit.py:526} INFO - at org.apache.spark.memory.UnifiedMemoryManager$.apply(UnifiedMemoryManager.scala:201)
+[2021-06-06 14:34:03,727] {spark_submit.py:526} INFO - at org.apache.spark.SparkEnv$.create(SparkEnv.scala:340)
+[2021-06-06 14:34:03,736] {spark_submit.py:526} INFO - at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:189)
+[2021-06-06 14:34:03,748] {spark_submit.py:526} INFO - at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:277)
+[2021-06-06 14:34:03,753] {spark_submit.py:526} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:458)
+[2021-06-06 14:34:03,760] {spark_submit.py:526} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2021-06-06 14:34:03,767] {spark_submit.py:526} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2021-06-06 14:34:03,777] {spark_submit.py:526} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+[2021-06-06 14:34:03,781] {spark_submit.py:526} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2021-06-06 14:34:03,789] {spark_submit.py:526} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+[2021-06-06 14:34:03,795] {spark_submit.py:526} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2021-06-06 14:34:03,801] {spark_submit.py:526} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2021-06-06 14:34:03,810] {spark_submit.py:526} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2021-06-06 14:34:03,817] {spark_submit.py:526} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2021-06-06 14:34:03,823] {spark_submit.py:526} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2021-06-06 14:34:03,829] {spark_submit.py:526} INFO - at py4j.GatewayConnection.run(GatewayConnection.java:238)
+[2021-06-06 14:34:03,833] {spark_submit.py:526} INFO - at java.base/java.lang.Thread.run(Thread.java:829)
+[2021-06-06 14:34:03,841] {spark_submit.py:526} INFO - 
+[2021-06-06 14:34:04,001] {spark_submit.py:526} INFO - 21/06/06 14:34:03 INFO ShutdownHookManager: Shutdown hook called
+[2021-06-06 14:34:04,033] {spark_submit.py:526} INFO - 21/06/06 14:34:04 INFO ShutdownHookManager: Deleting directory /tmp/spark-8a48fc08-6d13-4dfe-8cfd-57a9fa16360b
+[2021-06-06 14:34:04,749] {taskinstance.py:1455} ERROR - Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/airflow/dags/test.py. Error code is: 1.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 183, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 455, in submit
+    self._mask_cmd(spark_submit_cmd), returncode
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark /opt/airflow/dags/test.py. Error code is: 1.
+[2021-06-06 14:34:04,790] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=forex_data_pipeline, task_id=spark1, execution_date=20210605T000000, start_date=20210606T143348, end_date=20210606T143404
+[2021-06-06 14:34:04,900] {local_task_job.py:146} INFO - Task exited with return code 1

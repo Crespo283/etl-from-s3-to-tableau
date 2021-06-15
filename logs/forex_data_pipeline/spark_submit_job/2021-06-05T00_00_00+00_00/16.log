@@ -1,0 +1,108 @@
+[2021-06-06 18:17:54,956] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.spark_submit_job 2021-06-05T00:00:00+00:00 [queued]>
+[2021-06-06 18:17:55,498] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: forex_data_pipeline.spark_submit_job 2021-06-05T00:00:00+00:00 [queued]>
+[2021-06-06 18:17:55,528] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-06 18:17:55,553] {taskinstance.py:1043} INFO - Starting attempt 16 of 17
+[2021-06-06 18:17:55,616] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-06 18:17:56,000] {taskinstance.py:1063} INFO - Executing <Task(SparkSubmitOperator): spark_submit_job> on 2021-06-05T00:00:00+00:00
+[2021-06-06 18:17:56,071] {standard_task_runner.py:52} INFO - Started process 334 to run task
+[2021-06-06 18:17:56,310] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'forex_data_pipeline', 'spark_submit_job', '2021-06-05T00:00:00+00:00', '--job-id', '57', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag_spark.py', '--cfg-path', '/tmp/tmplw_gag3t', '--error-file', '/tmp/tmpdp5gkyr2']
+[2021-06-06 18:17:56,481] {standard_task_runner.py:77} INFO - Job 57: Subtask spark_submit_job
+[2021-06-06 18:17:57,001] {logging_mixin.py:104} INFO - Running <TaskInstance: forex_data_pipeline.spark_submit_job 2021-06-05T00:00:00+00:00 [running]> on host 72eec67484fb
+[2021-06-06 18:17:57,428] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=admin@localhost.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=forex_data_pipeline
+AIRFLOW_CTX_TASK_ID=spark_submit_job
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-05T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-05T00:00:00+00:00
+[2021-06-06 18:17:57,642] {base.py:74} INFO - Using connection to: id: spark_conn. Host: spark://spark-master, Port: 7077, Schema: , Login: marcelo, Password: XXXXXXXX, extra: None
+[2021-06-06 18:17:57,676] {spark_submit.py:364} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.dynamicAllocation.enabled=false --conf spark.shuffle.service.enabled=false --conf spark.driver.port=8083 --conf spark.blockManager.port=51814 --num-executors 1 --total-executor-cores 1 --executor-cores 1 --executor-memory 2g --driver-memory 2g --name airflow-spark1 /opt/airflow/dags/test.py
+[2021-06-06 18:18:25,835] {spark_submit.py:526} INFO - WARNING: An illegal reflective access operation has occurred
+[2021-06-06 18:18:25,863] {spark_submit.py:526} INFO - WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/airflow/.local/lib/python3.7/site-packages/pyspark/jars/spark-unsafe_2.12-3.1.2.jar) to constructor java.nio.DirectByteBuffer(long,int)
+[2021-06-06 18:18:25,873] {spark_submit.py:526} INFO - WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+[2021-06-06 18:18:25,893] {spark_submit.py:526} INFO - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[2021-06-06 18:18:25,975] {spark_submit.py:526} INFO - WARNING: All illegal access operations will be denied in a future release
+[2021-06-06 18:18:31,946] {spark_submit.py:526} INFO - 21/06/06 18:18:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2021-06-06 18:18:45,384] {spark_submit.py:526} INFO - Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[2021-06-06 18:18:45,641] {spark_submit.py:526} INFO - 21/06/06 18:18:45 INFO SparkContext: Running Spark version 3.1.2
+[2021-06-06 18:18:47,179] {spark_submit.py:526} INFO - 21/06/06 18:18:47 INFO ResourceUtils: ==============================================================
+[2021-06-06 18:18:47,233] {spark_submit.py:526} INFO - 21/06/06 18:18:47 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2021-06-06 18:18:47,265] {spark_submit.py:526} INFO - 21/06/06 18:18:47 INFO ResourceUtils: ==============================================================
+[2021-06-06 18:18:47,278] {spark_submit.py:526} INFO - 21/06/06 18:18:47 INFO SparkContext: Submitted application: pyspark-4
+[2021-06-06 18:18:47,844] {spark_submit.py:526} INFO - 21/06/06 18:18:47 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2021-06-06 18:18:48,285] {spark_submit.py:526} INFO - 21/06/06 18:18:48 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+[2021-06-06 18:18:48,388] {spark_submit.py:526} INFO - 21/06/06 18:18:48 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2021-06-06 18:18:50,399] {spark_submit.py:526} INFO - 21/06/06 18:18:50 INFO SecurityManager: Changing view acls to: airflow
+[2021-06-06 18:18:50,531] {spark_submit.py:526} INFO - 21/06/06 18:18:50 INFO SecurityManager: Changing modify acls to: airflow
+[2021-06-06 18:18:50,537] {spark_submit.py:526} INFO - 21/06/06 18:18:50 INFO SecurityManager: Changing view acls groups to:
+[2021-06-06 18:18:50,544] {spark_submit.py:526} INFO - 21/06/06 18:18:50 INFO SecurityManager: Changing modify acls groups to:
+[2021-06-06 18:18:50,546] {spark_submit.py:526} INFO - 21/06/06 18:18:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(airflow); groups with view permissions: Set(); users  with modify permissions: Set(airflow); groups with modify permissions: Set()
+[2021-06-06 18:18:55,387] {spark_submit.py:526} INFO - 21/06/06 18:18:55 INFO Utils: Successfully started service 'sparkDriver' on port 8083.
+[2021-06-06 18:18:55,784] {spark_submit.py:526} INFO - 21/06/06 18:18:55 INFO SparkEnv: Registering MapOutputTracker
+[2021-06-06 18:18:56,441] {spark_submit.py:526} INFO - 21/06/06 18:18:56 INFO SparkEnv: Registering BlockManagerMaster
+[2021-06-06 18:18:56,812] {spark_submit.py:526} INFO - 21/06/06 18:18:56 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2021-06-06 18:18:56,815] {spark_submit.py:526} INFO - 21/06/06 18:18:56 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2021-06-06 18:18:56,904] {spark_submit.py:526} INFO - 21/06/06 18:18:56 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2021-06-06 18:18:57,050] {spark_submit.py:526} INFO - 21/06/06 18:18:57 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-1c1ee504-d748-4590-a348-772157d408a3
+[2021-06-06 18:18:57,200] {spark_submit.py:526} INFO - 21/06/06 18:18:57 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+[2021-06-06 18:18:57,378] {spark_submit.py:526} INFO - 21/06/06 18:18:57 INFO SparkEnv: Registering OutputCommitCoordinator
+[2021-06-06 18:19:00,432] {spark_submit.py:526} INFO - 21/06/06 18:19:00 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2021-06-06 18:19:01,266] {spark_submit.py:526} INFO - 21/06/06 18:19:01 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://72eec67484fb:4040
+[2021-06-06 18:19:03,846] {spark_submit.py:526} INFO - 21/06/06 18:19:03 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2021-06-06 18:19:04,809] {spark_submit.py:526} INFO - 21/06/06 18:19:04 INFO TransportClientFactory: Successfully created connection to spark-master/172.21.0.6:7077 after 543 ms (0 ms spent in bootstraps)
+[2021-06-06 18:19:05,705] {spark_submit.py:526} INFO - 21/06/06 18:19:05 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20210606181905-0011
+[2021-06-06 18:19:05,729] {spark_submit.py:526} INFO - 21/06/06 18:19:05 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 51814.
+[2021-06-06 18:19:05,731] {spark_submit.py:526} INFO - 21/06/06 18:19:05 INFO NettyBlockTransferService: Server created on 72eec67484fb:51814
+[2021-06-06 18:19:05,735] {spark_submit.py:526} INFO - 21/06/06 18:19:05 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2021-06-06 18:19:05,796] {spark_submit.py:526} INFO - 21/06/06 18:19:05 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 72eec67484fb, 51814, None)
+[2021-06-06 18:19:05,912] {spark_submit.py:526} INFO - 21/06/06 18:19:05 INFO BlockManagerMasterEndpoint: Registering block manager 72eec67484fb:51814 with 1048.8 MiB RAM, BlockManagerId(driver, 72eec67484fb, 51814, None)
+[2021-06-06 18:19:05,930] {spark_submit.py:526} INFO - 21/06/06 18:19:05 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 72eec67484fb, 51814, None)
+[2021-06-06 18:19:05,934] {spark_submit.py:526} INFO - 21/06/06 18:19:05 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 72eec67484fb, 51814, None)
+[2021-06-06 18:19:08,745] {spark_submit.py:526} INFO - 21/06/06 18:19:08 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2021-06-06 18:19:13,720] {spark_submit.py:526} INFO - 21/06/06 18:19:13 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('/opt/airflow/spark-warehouse').
+[2021-06-06 18:19:13,772] {spark_submit.py:526} INFO - 21/06/06 18:19:13 INFO SharedState: Warehouse path is '/opt/airflow/spark-warehouse'.
+[2021-06-06 18:19:23,242] {spark_submit.py:526} INFO - ESTOY AQUI¿¿
+[2021-06-06 18:20:03,028] {spark_submit.py:526} INFO - 21/06/06 18:20:03 INFO CodeGenerator: Code generated in 4421.1717 ms
+[2021-06-06 18:20:03,414] {spark_submit.py:526} INFO - 21/06/06 18:20:03 INFO SparkContext: Starting job: showString at NativeMethodAccessorImpl.java:0
+[2021-06-06 18:20:03,767] {spark_submit.py:526} INFO - 21/06/06 18:20:03 INFO DAGScheduler: Got job 0 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2021-06-06 18:20:03,787] {spark_submit.py:526} INFO - 21/06/06 18:20:03 INFO DAGScheduler: Final stage: ResultStage 0 (showString at NativeMethodAccessorImpl.java:0)
+[2021-06-06 18:20:03,819] {spark_submit.py:526} INFO - 21/06/06 18:20:03 INFO DAGScheduler: Parents of final stage: List()
+[2021-06-06 18:20:03,827] {spark_submit.py:526} INFO - 21/06/06 18:20:03 INFO DAGScheduler: Missing parents: List()
+[2021-06-06 18:20:03,951] {spark_submit.py:526} INFO - 21/06/06 18:20:03 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2021-06-06 18:20:05,161] {spark_submit.py:526} INFO - 21/06/06 18:20:05 INFO AsyncEventQueue: Process of event SparkListenerJobStart(0,1623003603820,WrappedArray(org.apache.spark.scheduler.StageInfo@f7ba1aa),{spark.executor.memory=2g, spark.driver.port=8083, spark.driver.memory=2g, spark.master=spark://spark-master:7077, spark.submit.pyFiles=, spark.app.startTime=1623003524952, spark.driver.cores=1, spark.rdd.compress=True, spark.executor.id=driver, spark.app.name=pyspark-4, spark.executor.cores=1, spark.submit.deployMode=client, spark.driver.host=72eec67484fb, spark.app.id=app-20210606181905-0011, spark.shuffle.service.enabled=false, spark.sql.execution.id=0, spark.cores.max=1, spark.blockManager.port=51814, spark.dynamicAllocation.enabled=false, spark.sql.warehouse.dir=/opt/airflow/spark-warehouse, spark.serializer.objectStreamReset=100}) by listener AppStatusListener took 1.1323294s.
+[2021-06-06 18:20:07,024] {spark_submit.py:526} INFO - 21/06/06 18:20:07 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 11.3 KiB, free 1048.8 MiB)
+[2021-06-06 18:20:07,415] {spark_submit.py:526} INFO - 21/06/06 18:20:07 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 6.0 KiB, free 1048.8 MiB)
+[2021-06-06 18:20:07,440] {spark_submit.py:526} INFO - 21/06/06 18:20:07 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 72eec67484fb:51814 (size: 6.0 KiB, free: 1048.8 MiB)
+[2021-06-06 18:20:07,465] {spark_submit.py:526} INFO - 21/06/06 18:20:07 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1388
+[2021-06-06 18:20:07,573] {spark_submit.py:526} INFO - 21/06/06 18:20:07 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[6] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2021-06-06 18:20:07,587] {spark_submit.py:526} INFO - 21/06/06 18:20:07 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2021-06-06 18:20:22,808] {spark_submit.py:526} INFO - 21/06/06 18:20:22 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:20:37,721] {spark_submit.py:526} INFO - 21/06/06 18:20:37 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:20:52,722] {spark_submit.py:526} INFO - 21/06/06 18:20:52 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:21:07,981] {spark_submit.py:526} INFO - 21/06/06 18:21:07 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:21:22,799] {spark_submit.py:526} INFO - 21/06/06 18:21:22 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:21:37,728] {spark_submit.py:526} INFO - 21/06/06 18:21:37 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:21:52,721] {spark_submit.py:526} INFO - 21/06/06 18:21:52 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:22:07,735] {spark_submit.py:526} INFO - 21/06/06 18:22:07 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:22:22,722] {spark_submit.py:526} INFO - 21/06/06 18:22:22 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:22:37,721] {spark_submit.py:526} INFO - 21/06/06 18:22:37 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:22:52,721] {spark_submit.py:526} INFO - 21/06/06 18:22:52 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:23:07,754] {spark_submit.py:526} INFO - 21/06/06 18:23:07 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:23:22,721] {spark_submit.py:526} INFO - 21/06/06 18:23:22 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:23:37,727] {spark_submit.py:526} INFO - 21/06/06 18:23:37 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:23:52,721] {spark_submit.py:526} INFO - 21/06/06 18:23:52 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:24:07,721] {spark_submit.py:526} INFO - 21/06/06 18:24:07 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:24:22,723] {spark_submit.py:526} INFO - 21/06/06 18:24:22 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:24:37,758] {spark_submit.py:526} INFO - 21/06/06 18:24:37 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:24:52,730] {spark_submit.py:526} INFO - 21/06/06 18:24:52 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:25:07,745] {spark_submit.py:526} INFO - 21/06/06 18:25:07 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:25:22,729] {spark_submit.py:526} INFO - 21/06/06 18:25:22 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:25:37,731] {spark_submit.py:526} INFO - 21/06/06 18:25:37 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:25:52,722] {spark_submit.py:526} INFO - 21/06/06 18:25:52 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2021-06-06 18:26:02,484] {local_task_job.py:77} ERROR - Received SIGTERM. Terminating subprocesses
+[2021-06-06 18:26:03,027] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 334
+[2021-06-06 18:26:03,183] {taskinstance.py:1239} ERROR - Received SIGTERM. Terminating subprocesses.
+[2021-06-06 18:26:05,849] {spark_submit.py:657} INFO - Sending kill signal to spark-submit
+[2021-06-06 18:26:06,260] {process_utils.py:66} INFO - Process psutil.Process(pid=409, status='terminated', started='18:18:36') (409) terminated with exit code None
