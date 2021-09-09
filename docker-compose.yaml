@@ -171,37 +171,37 @@ services:
   # SPARK SERVICES
   ######################################################
 
-  jupyterlab:
-    image: andreper/jupyterlab:3.0.0-spark-3.0.0
-    container_name: jupyterlab1
-    ports:
-      - 8888:8888
-      - 4040:4040
-    volumes:
-      - shared-workspace:/opt/workspace
-  spark-master:
-    image: andreper/spark-master:3.0.0
-    container_name: spark-master1
-    ports:
-      - 8081:8080
-      - 7077:7077
-    volumes:
-      - shared-workspace:/opt/workspace
+  # jupyterlab:
+  #   image: andreper/jupyterlab:3.0.0-spark-3.0.0
+  #   container_name: jupyterlab1
+  #   ports:
+  #     - 8888:8888
+  #     - 4040:4040
+  #   volumes:
+  #     - shared-workspace:/opt/workspace
+  # spark-master:
+  #   image: andreper/spark-master:3.0.0
+  #   container_name: spark-master1
+  #   ports:
+  #     - 8081:8080
+  #     - 7077:7077
+  #   volumes:
+  #     - shared-workspace:/opt/workspace
       # https://docs.docker.com/compose/compose-file/compose-file-v2/#cpu-and-other-resources
     # mem_reservation: 2g
 
-  spark-worker-1:
-    image: andreper/spark-worker:3.0.0
-    container_name: spark-worker-3
-    environment:
-      - SPARK_WORKER_CORES=2
-      - SPARK_WORKER_MEMORY=3g
-    ports:
-      - 8082:8081
-    volumes:
-      - shared-workspace:/opt/workspace
-    depends_on:
-      - spark-master
+  # spark-worker-1:
+  #   image: andreper/spark-worker:3.0.0
+  #   container_name: spark-worker-3
+  #   environment:
+  #     - SPARK_WORKER_CORES=2
+  #     - SPARK_WORKER_MEMORY=3g
+  #   ports:
+  #     - 8082:8081
+  #   volumes:
+  #     - shared-workspace:/opt/workspace
+  #   depends_on:
+  #     - spark-master
   # spark-worker-2:
   #   image: andreper/spark-worker:3.0.0
   #   container_name: spark-worker-4

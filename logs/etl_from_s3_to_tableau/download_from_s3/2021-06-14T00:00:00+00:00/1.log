@@ -1,0 +1,160 @@
+[2021-06-15 15:18:14,431] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: etl_from_s3_to_tableau.download_from_s3 2021-06-14T00:00:00+00:00 [queued]>
+[2021-06-15 15:18:14,455] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: etl_from_s3_to_tableau.download_from_s3 2021-06-14T00:00:00+00:00 [queued]>
+[2021-06-15 15:18:14,455] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-15 15:18:14,455] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2021-06-15 15:18:14,455] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-15 15:18:14,469] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): download_from_s3> on 2021-06-14T00:00:00+00:00
+[2021-06-15 15:18:14,475] {standard_task_runner.py:52} INFO - Started process 2587 to run task
+[2021-06-15 15:18:14,481] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'etl_from_s3_to_tableau', 'download_from_s3', '2021-06-14T00:00:00+00:00', '--job-id', '26', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/etl_from_s3_to_tableau.py', '--cfg-path', '/tmp/tmp9tuoz49r', '--error-file', '/tmp/tmpsjavl3c9']
+[2021-06-15 15:18:14,482] {standard_task_runner.py:77} INFO - Job 26: Subtask download_from_s3
+[2021-06-15 15:18:14,543] {logging_mixin.py:104} INFO - Running <TaskInstance: etl_from_s3_to_tableau.download_from_s3 2021-06-14T00:00:00+00:00 [running]> on host a1a5fa2e9591
+[2021-06-15 15:18:14,623] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=samucg94@gmail.com
+AIRFLOW_CTX_DAG_OWNER=SAMUEL
+AIRFLOW_CTX_DAG_ID=etl_from_s3_to_tableau
+AIRFLOW_CTX_TASK_ID=download_from_s3
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-14T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-14T00:00:00+00:00
+[2021-06-15 15:18:14,631] {taskinstance.py:1455} ERROR - Unable to locate credentials
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 117, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/scripts/etl_from_s3_to_tableau/download_from_s3.py", line 23, in save_csv
+    df = s3_to_df(bucket = bucket, sheet= sheet)
+  File "/opt/airflow/dags/scripts/etl_from_s3_to_tableau/helpers/etl_from_s3_to_tableau.py", line 26, in s3_to_df
+    Bucket=bucket, Key="ecomerce_folder/CA1_Ecommerce_database.xlsx"
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 663, in _make_api_call
+    operation_model, request_dict, request_context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 682, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 102, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 132, in _send_request
+    request = self.create_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 116, in create_request
+    operation_name=operation_model.name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 356, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 228, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 211, in _emit
+    response = handler(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/signers.py", line 90, in handler
+    return self.sign(operation_name, request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/signers.py", line 162, in sign
+    auth.add_auth(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/auth.py", line 357, in add_auth
+    raise NoCredentialsError
+botocore.exceptions.NoCredentialsError: Unable to locate credentials
+[2021-06-15 15:18:14,641] {taskinstance.py:1503} INFO - Marking task as FAILED. dag_id=etl_from_s3_to_tableau, task_id=download_from_s3, execution_date=20210614T000000, start_date=20210615T151814, end_date=20210615T151814
+[2021-06-15 15:18:14,665] {configuration.py:356} WARNING - section/key [smtp/smtp_user] not found in config
+[2021-06-15 15:18:14,665] {email.py:184} INFO - Email alerting: attempt 1
+[2021-06-15 15:18:14,667] {configuration.py:356} WARNING - section/key [smtp/smtp_user] not found in config
+[2021-06-15 15:18:14,667] {email.py:184} INFO - Email alerting: attempt 1
+[2021-06-15 15:18:14,668] {taskinstance.py:1509} ERROR - Failed to send email to: ['samucg94@gmail.com']
+[2021-06-15 15:18:14,668] {taskinstance.py:1510} ERROR - [Errno 99] Cannot assign requested address
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 117, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/scripts/etl_from_s3_to_tableau/download_from_s3.py", line 23, in save_csv
+    df = s3_to_df(bucket = bucket, sheet= sheet)
+  File "/opt/airflow/dags/scripts/etl_from_s3_to_tableau/helpers/etl_from_s3_to_tableau.py", line 26, in s3_to_df
+    Bucket=bucket, Key="ecomerce_folder/CA1_Ecommerce_database.xlsx"
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 357, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 663, in _make_api_call
+    operation_model, request_dict, request_context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/client.py", line 682, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 102, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 132, in _send_request
+    request = self.create_request(request_dict, operation_model)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/endpoint.py", line 116, in create_request
+    operation_name=operation_model.name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 356, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 228, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/hooks.py", line 211, in _emit
+    response = handler(**kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/signers.py", line 90, in handler
+    return self.sign(operation_name, request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/signers.py", line 162, in sign
+    auth.add_auth(request)
+  File "/home/airflow/.local/lib/python3.7/site-packages/botocore/auth.py", line 357, in add_auth
+    raise NoCredentialsError
+botocore.exceptions.NoCredentialsError: Unable to locate credentials
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1852, in email_alert
+    send_email(self.task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 62, in send_email
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 97, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 186, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 220, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.7/smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.7/smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "/usr/local/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/usr/local/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1507, in handle_failure
+    self.email_alert(error)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1854, in email_alert
+    send_email(self.task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 62, in send_email
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 97, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 186, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/email.py", line 220, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.7/smtplib.py", line 251, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.7/smtplib.py", line 336, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.7/smtplib.py", line 307, in _get_socket
+    self.source_address)
+  File "/usr/local/lib/python3.7/socket.py", line 728, in create_connection
+    raise err
+  File "/usr/local/lib/python3.7/socket.py", line 716, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+[2021-06-15 15:18:14,730] {local_task_job.py:146} INFO - Task exited with return code 1
